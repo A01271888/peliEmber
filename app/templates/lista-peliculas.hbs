@@ -1,0 +1,17 @@
+{{outlet}}
+
+<h3>Lista de Películas</h3>
+
+<ul>
+	{{#each model as |peli|}}
+		<li>
+			{{peli.nombre}} 
+		</li>
+		{{#link-to 'detalles-pelicula' peli.id}}
+		<button {{action 'detalles' peli.nombre}}>Detalles</button>
+		{{/link-to}}
+		<hr>
+	{{/each}}	
+</ul>
+
+{{#link-to 'nueva-pelicula'}} <button> Agrega Pelicula </button> {{/link-to}}
